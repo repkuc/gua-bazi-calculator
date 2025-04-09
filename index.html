@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Калькулятор числа Гуа</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="gua-calculator">
+      <div class="language-switcher">
+        <label id="langLabel" for="langSelect">Язык</label>
+        <select id="langSelect">
+          <option value="ru">Русский</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+
+      <h1 class="gua-calculator__title" id="mainTitle">
+        Калькулятор числа Гуа
+      </h1>
+
+      <div class="gua-calculator__form">
+        <label for="birthDate" id="birthLabel" class="gua-calculator__label"
+          >Дата рождения:</label
+        >
+        <input type="date" class="gua-calculator__input" id="birthDate" />
+
+        <label for="gender" id="genderLabel" class="gua-calculator__label"
+          >Пол:</label
+        >
+        <select id="gender" class="gua-calculator__select">
+          <option value="male" id="optMale">Мужчина</option>
+          <option value="female" id="optFemale">Женщина</option>
+        </select>
+
+        <button class="gua-calculator__button" id="calculateBtn">
+          Рассчитать
+        </button>
+      </div>
+      <div class="gua-calculator__result" id="result"></div>
+    </div>
+
+    <script src="data/translations.js"></script>
+    <script src="data/gua-description.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
