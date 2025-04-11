@@ -61,14 +61,23 @@ function displayResult(gua) {
     <p> ${resultLabel} <strong>${gua}</strong> </p>
     <p class="gua-calculator__meaning">${description}</p>
     `;
+
+  resultElement.style.display = "block";
+  setTimeout(() => {
+    resultElement.style.opacity = "1";
+  }, 10);
 }
 
 function handleCalculateClick() {
+  console.log("Кнопка нажата!");
   const birthInput = document.getElementById("birthDate").value;
   const gender = document.getElementById("gender").value;
+  const resultElement = document.getElementById("result");
+
   if (!birthInput) {
-    document.getElementById("result").textContent =
-      "Пожалуйста, выберите дату рождения.";
+    resultElement.textContent = "Пожалуйста, выберите дату рождения.";
+    resultElement.style.display = "block";
+    resultElement.style.opacity = "1";
     return;
   }
 
@@ -106,6 +115,7 @@ window.addEventListener("DOMContentLoaded", function () {
   updateUIText();
 });
 
-document
-  .getElementById("calculateBtn")
-  .addEventListener("click", handleCalculateClick);
+document.getElementById("guaForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  handleCalculateClick();
+});

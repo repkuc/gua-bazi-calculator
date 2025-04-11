@@ -4,13 +4,22 @@ body {
   padding: 0;
 }
 
+.calculators-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap; /* Чтобы на мобильных калькуляторы уходили друг под другом */
+}
+
 .gua-calculator {
-  max-width: 400px;
-  margin: 50px auto;
-  background-color: #fff;
+  margin-top: 20px;
+  width: 360px;
+  background-color: #f9f9f9;
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
 }
 
 .gua-calculator__title {
@@ -40,29 +49,35 @@ body {
   border: 1px solid #ccc;
 }
 
-.gua-calculator__button {
+.gua-calculator__button,
+.bazi-calculator__button {
   padding: 12px;
-  background-color: #363535;
-  color: white;
   font-size: 16px;
+  background-color: #212121;
+  color: #fff;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
-.gua-calculator__button:hover {
+.gua-calculator__button:hover,
+.bazi-calculator__button:hover {
   background-color: #000;
 }
 
-.gua-calculator__result {
-  margin-top: 20px;
+.gua-calculator__result,
+.bazi-calculator__result {
+  display: none;
+  opacity: 0;
   padding: 15px;
   background-color: #e8fbe8;
   border-left: 5px solid #4caf50;
   border-radius: 6px;
   font-size: 18px;
   color: #2e7d32;
+  margin-top: 20px;
+  transition: opacity 0.3s ease;
 }
 
 .language-switcher {
@@ -85,4 +100,47 @@ body {
   border: 1px solid #ccc;
   font-size: 14px;
   background-color: #fdfdfd;
+}
+
+/* === Bazi Calculator === */
+.bazi-calculator {
+  margin-top: 20px;
+  width: 360px;
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.bazi-calculator__title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #212121;
+  text-align: center;
+}
+
+.bazi-calculator__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bazi-calculator__field {
+  display: flex;
+  flex-direction: column;
+}
+
+.bazi-calculator__label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
+}
+
+.bazi-calculator__input,
+.bazi-calculator__select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fff;
 }

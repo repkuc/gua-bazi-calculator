@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div class="gua-calculator">
+    <div class="calculators-wrapper">
       <div class="language-switcher">
         <label id="langLabel" for="langSelect">Язык</label>
         <select id="langSelect">
@@ -16,33 +16,84 @@
         </select>
       </div>
 
-      <h1 class="gua-calculator__title" id="mainTitle">
-        Калькулятор числа Гуа
-      </h1>
+      <section class="gua-calculator">
+        <h2 class="gua-calculator__title" id="mainTitle">
+          Калькулятор числа Гуа
+        </h2>
 
-      <div class="gua-calculator__form">
-        <label for="birthDate" id="birthLabel" class="gua-calculator__label"
-          >Дата рождения:</label
-        >
-        <input type="date" class="gua-calculator__input" id="birthDate" />
+        <form class="gua-calculator__form" id="guaForm">
+          <label for="birthDate" id="birthLabel" class="gua-calculator__label"
+            >Дата рождения:</label
+          >
+          <input type="date" class="gua-calculator__input" id="birthDate" />
 
-        <label for="gender" id="genderLabel" class="gua-calculator__label"
-          >Пол:</label
-        >
-        <select id="gender" class="gua-calculator__select">
-          <option value="male" id="optMale">Мужчина</option>
-          <option value="female" id="optFemale">Женщина</option>
-        </select>
+          <label for="gender" id="genderLabel" class="gua-calculator__label"
+            >Пол:</label
+          >
+          <select id="gender" class="gua-calculator__select">
+            <option value="male" id="optMale">Мужчина</option>
+            <option value="female" id="optFemale">Женщина</option>
+          </select>
 
-        <button class="gua-calculator__button" id="calculateBtn">
-          Рассчитать
-        </button>
-      </div>
-      <div class="gua-calculator__result" id="result"></div>
+          <button
+            type="submit"
+            class="gua-calculator__button"
+            id="calculateBtn"
+          >
+            Рассчитать
+          </button>
+        </form>
+        <div class="gua-calculator__result" id="result"></div>
+      </section>
+
+      <section class="bazi-calculator">
+        <h2 class="bazi-calculator__title">Калькулятор Ба Цзы</h2>
+
+        <form class="bazi-calculator__form" id="baziForm">
+          <div class="bazi-calculator__field">
+            <label for="baziBirthDate" class="bazi-calculator__label"
+              >Дата рождения:</label
+            >
+            <input
+              type="date"
+              id="baziBirthDate"
+              class="bazi-calculator__input"
+            />
+          </div>
+
+          <div class="bazi-calculator__field">
+            <label for="baziBirthTime" class="bazi-calculator__label"
+              >Время рождения (необязательно):</label
+            >
+            <input
+              type="time"
+              id="baziBirthTime"
+              class="bazi-calculator__input"
+            />
+          </div>
+
+          <div class="bazi-calculator__field">
+            <label for="baziGender" class="bazi-calculator__label">Пол:</label>
+            <select id="baziGender" class="bazi-calculator__select">
+              <option value="male">Мужчина</option>
+              <option value="female">Женщина</option>
+            </select>
+          </div>
+
+          <button type="submit" class="bazi-calculator__button">
+            Рассчитать
+          </button>
+        </form>
+
+        <div class="bazi-calculator__result" id="baziResult"></div>
+      </section>
     </div>
 
     <script src="data/translations.js"></script>
     <script src="data/gua-description.js"></script>
+
+    <script src="js/gua-calculator.js"></script>
+    <script src="js/bazi-calculator.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
