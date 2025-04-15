@@ -80,6 +80,29 @@
             </select>
           </div>
 
+          <div class="bazi-calculator__field">
+            <label for="baziCountry" class="bazi-calculator__label"
+              >Страна где родились:
+            </label>
+            <select id="baziCountry" class="bazi-calculator__select">
+              <option value="Latvia" selected>Латвия</option>
+              <!-- в будущем API добавит другие страны -->
+            </select>
+          </div>
+
+          <div class="bazi-calculator__field">
+            <label for="baziCity" class="bazi-calculator__label"
+              >Город где родились:
+            </label>
+            <select id="baziCity" class="bazi-calculator__select">
+              <option value="Riga" selected>Рига</option>
+              <!-- в будущем API добавит другие страны -->
+            </select>
+          </div>
+
+          <!-- Временно: скрытое поле для таймзоны -->
+          <input type="hidden" id="baziTimezone" value="Europe/Riga" />
+
           <button type="submit" class="bazi-calculator__button">
             Рассчитать
           </button>
@@ -88,6 +111,9 @@
         <div class="bazi-calculator__result" id="baziResult"></div>
       </section>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3/build/global/luxon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/solarlunar"></script>
 
     <script src="data/translations.js"></script>
     <script src="data/gua-description.js"></script>
